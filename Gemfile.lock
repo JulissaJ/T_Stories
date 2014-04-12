@@ -122,12 +122,9 @@ GEM
     shoulda-context (1.2.0)
     shoulda-matchers (2.5.0)
       activesupport (>= 3.0.0)
-<<<<<<< HEAD
-=======
     simple_form (3.0.1)
       actionpack (>= 4.0.0, < 4.1)
       activemodel (>= 4.0.0, < 4.1)
->>>>>>> add_posts
     slop (3.5.0)
     sprockets (2.11.0)
       hike (~> 1.2)
@@ -171,10 +168,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.2)
   sdoc
   shoulda
-<<<<<<< HEAD
-=======
   simple_form
->>>>>>> add_posts
   turbolinks
   uglifier (>= 1.3.0)
   valid_attribute
