@@ -1,4 +1,18 @@
 <h3> <%= @post.title %> </h3>
 <p> <%= @post.content %></p>
 
+<%= link_to 'Add a Comment', new_post_comment_path(@post) %>
+
+<% if @post.comments.present? %>
+  <div>
+    <ul>
+      <%  @post.comments.each do |comment| %>
+        <li>
+          <%= comment.body %>
+        </li>
+      <%end%>
+    </ul>
+  </div>
+<% end %>
+
 <%= link_to "Back to T Stories", posts_path %>
