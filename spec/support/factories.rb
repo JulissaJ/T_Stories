@@ -11,4 +11,14 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :post do
+    title 'On the blue line today...'
+    content 'it was crazy'
+  end
+
+  factory :comment do
+    body 'first!'
+    post
+  end
+
 end
