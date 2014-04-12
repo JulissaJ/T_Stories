@@ -9,14 +9,14 @@ feature 'user signs up' , %Q{
   scenario 'specifying valid and required information' do
     visit root_path
     click_link "Sign Up"
-    fill_in "Name", with: "Bilbo Baggins"
     fill_in "Username", with: "dragonburglar"
     fill_in "Email", with: "dragonburglar@gmail.com"
     fill_in 'user_password', with: "password"
     fill_in "Password confirmation", with: "password"
     click_on "Sign Up"
 
-    expect(page).to have_content("You're In!")
+
+    expect(page).to have_content("Welcome! You have signed up successfully.")
     expect(page).to have_content("Sign Out")
   end
 
