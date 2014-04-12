@@ -1,0 +1,9 @@
+<h1> T Stories </h1>
+
+  <% @posts.each do |post| %>
+    <div>
+      <%= link_to post.title, post %>
+      <%= post.content %>
+    </div>
+  <% end %>
+<%= link_to 'Add new T Story', new_post_path %>
