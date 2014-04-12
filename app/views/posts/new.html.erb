@@ -1,0 +1,7 @@
+<h1> Submit a T Story </h1>
+
+<%= simple_form_for(@post) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+  <%= f.button :submit, 'Submit T Story' %>
+<% end %>

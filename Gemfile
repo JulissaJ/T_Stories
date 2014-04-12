@@ -32,7 +32,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test, :development do
+
+group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
 end
