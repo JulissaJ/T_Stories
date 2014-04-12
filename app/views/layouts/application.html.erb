@@ -1,24 +1,42 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>TStories</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-   <% if request.env['PATH_INFO'] != new_user_registration_path && request.env['PATH_INFO'] != '/users' %>
-      <nav>
-          <ul>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "T Stories" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+  <% if request.env['PATH_INFO'] != new_user_registration_path && request.env['PATH_INFO'] != '/users' %>
+
+
+        <nav class= 'top-bar'>
+        <ul class= 'title-area'>
+        <li class="name">
+             <h1><%= link_to "T Stories", posts_path %> </h1>
+        </li>
+        </ul>
+         <section class="top-bar-section">
+          <ul class="right">
               <% if !user_signed_in? %>
-                <li><%= link_to "Sign Up", new_user_registration_path %></li>
-                <li><%= link_to "Sign In", new_user_session_path %></li>
+                <li class='active'><%= link_to "Sign Up", new_user_registration_path %></li>
+                <li class="divider"></li>
+                <li class='active'><%= link_to "Sign In", new_user_session_path %></li>
               <% else %>
                 <li>Welcome <%= current_user.username %></li>
-                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+                <li class ='active'><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
               <% end %>
           </ul>
-      </nav>
+          </section>
+        </nav>
+
+
+
     <% end %>
 <% if flash[:notice].present? %>
       <%= flash[:notice] %>
@@ -28,7 +46,7 @@
       <%= flash[:alert] %>
     <% end %>
 
-<%= yield %>
-
-</body>
+    <%= yield %>
+    <%= javascript_include_tag "application" %>
+  </body>
 </html>

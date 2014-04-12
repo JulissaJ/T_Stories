@@ -3,7 +3,8 @@
   <% @posts.each do |post| %>
     <div>
       <%= link_to post.title, post %>
-      <%= post.content %>
+      <p><%= truncate(post.content, length: 100, omission: '...(continued)') %></p>
     </div>
   <% end %>
 <%= link_to 'Add new T Story', new_post_path %>
+
